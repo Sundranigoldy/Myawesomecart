@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:8000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./;_files/main.css">
+    <link rel="stylesheet" href="./;_files/bootstrap.min.css">
+    <title> Home</title>
+    
+<style>
+  /* index.html css */
+  .col-md-3 {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+  .carousel-indicators .active {
+    background-color: blue;
+  }
+
+  .col-md-3 img {
+
+    width: 227px;
+    height: 242px;
+  }
+
+  body .carousel-indicator li {
+    background-color: blue;
+  }
+
+  body .carousel-indicators {
+    bottom: 0;
+  }
+
+  body .carousel-control-prev-icon,
+  body .carousel-control-next-icon {
+    background-color: blue;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    top: auto;
+    bottom: auto;
+    padding-top: 350px;
+  }
+
+  body .no-padding {
+    padding-left: 0,
+
+  }
+</style>
+
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1089.0" data-gr-ext-installed="">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/about">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/tracker">Track ur shipment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/checkout"> Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/productview"> Prodcuctview</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="&lt;h5&gt;Cart for your items in my shopping cart&lt;/h5&gt;" data-original-title="" title="">
+                Cart(<span id="cart">10</span>)
+            </button>
+            </div>
+        </div>
+    </nav>
+    
+
+<div class="container">
+
+  <!--Slideshow starts here -->
+  
+  <h5 class="my-4">Flash Sale On watch - Recommended Items</h5>
+  <div class="row">
+    <div id="demo1" class="col carousel slide my-3 pointer-event" data-ride="carousel">
+      <!-- forloop.counter is used to give whatever no. of forlloop is going on gives that -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo1" data-slide-to="0" class="active"></li>
+
+        
+        <li data-target="#demo1" data-slide-to="1" class=""></li>
+        
+      </ul>
+
+      <!-- slide show starts here -->
+      <div class="container carousel-inner no-padding">
+
+        <div class="carousel-item active">
+
+          <!-- in for below we are handling product from above 1. and above div is used for handling 1st product... -->
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/7image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Newly Launched Boult Dive</h5>
+                <p class="card-text">Newly Launched Boult Dive+ with 1.85" HD Display, Bluetooth Calling Smartwatch, 500 Nits Brightness, 7 Days Battery Life, 150+ Watch Faces, 100+ Sport Modes, IP68 Waterproof Smart Watch (Jet Black)</p>
+                <button id="pr4" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv4" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/6image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Newly Launched Boult Dive+ with Mega</h5>
+                <p class="card-text">Newly Launched Boult Dive+ with Mega 1.85" HD Display, Bluetooth Calling Smartwatch, 500 Nits Brightness, 7 Days Battery Life, 150+ Watch Faces, 100+ Sport Modes, IP68 Waterproof Smart Watch (Tan)</p>
+                <button id="pr5" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv5" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/5image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Boult Newly Launched Dive+ with 1.85"</h5>
+                <p class="card-text">Boult Newly Launched Dive+ with 1.85" HD Display, Bluetooth Calling Smartwatch, 500 Nits Brightness, 7 Days Battery Life, 150+ Watch Faces, 100+ Sport Modes, IP68 Waterproof Smart Watch (ICY Blue)</p>
+                <button id="pr6" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv6" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+        </div>
+        <div class="carousel-item">
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/4image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Noise ColorFit Pro 2 F</h5>
+                <p class="card-text">Noise ColorFit Pro 2 Full Touch Control Smart Watch with 35g Weight &amp; Upgraded LCD Display,IP68 Waterproof,Heart Rate Monitor,Sleep &amp; Step Tracker,Call &amp; Message Alerts &amp; Long Battery Life (Jet Black)</p>
+                <button id="pr7" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv7" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/7image_GRSS08g.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">watch test</h5>
+                <p class="card-text">givin it for an tesy</p>
+                <button id="pr12" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv12" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="http://127.0.0.1:8000/#demo1" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="http://127.0.0.1:8000/#demo1" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  
+  <h5 class="my-4">Flash Sale On perfume - Recommended Items</h5>
+  <div class="row">
+    <div id="demo2" class="col carousel slide my-3 pointer-event" data-ride="carousel">
+      <!-- forloop.counter is used to give whatever no. of forlloop is going on gives that -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo2" data-slide-to="0" class="active"></li>
+
+        
+      </ul>
+
+      <!-- slide show starts here -->
+      <div class="container carousel-inner no-padding">
+
+        <div class="carousel-item active">
+
+          <!-- in for below we are handling product from above 1. and above div is used for handling 1st product... -->
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/2image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Fogg Xtremo Scent</h5>
+                <p class="card-text">Fogg Xtremo Scent, Eau De Parfum, Men’s Perfume, Long-lasting Fresh &amp; Soothing Fragrance, 100ml</p>
+                <button id="pr8" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv8" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/3image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Fogg Impressio Scent</h5>
+                <p class="card-text">Fogg Impressio Scent, Eau De Parfum, Men’s Perfume, Long-lasting Fresh &amp; Soothing Fragrance, 100ml</p>
+                <button id="pr9" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv9" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="http://127.0.0.1:8000/#demo2" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="http://127.0.0.1:8000/#demo2" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  
+  <h5 class="my-4">Flash Sale On bag - Recommended Items</h5>
+  <div class="row">
+    <div id="demo3" class="col carousel slide my-3 pointer-event" data-ride="carousel">
+      <!-- forloop.counter is used to give whatever no. of forlloop is going on gives that -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo3" data-slide-to="0" class="active"></li>
+
+        
+      </ul>
+
+      <!-- slide show starts here -->
+      <div class="container carousel-inner no-padding">
+
+        <div class="carousel-item active">
+
+          <!-- in for below we are handling product from above 1. and above div is used for handling 1st product... -->
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/1image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">American Tourister 32</h5>
+                <p class="card-text">American Tourister 32 Ltrs Grey Casual Backpack (AMT FIZZ SCH BAG 02 - GREY)</p>
+                <button id="pr10" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv10" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="./;_files/0image.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">American Tourister Ivy</h5>
+                <p class="card-text">American Tourister Ivy Polypropylene 68 cms Black Hardsided Check-in Luggage (FO1 (0) 09 002)</p>
+                <button id="pr11" class="btn btn-primary cart">Add To Cart</button>
+                <button id="pv11" class="btn btn-primary cart">View product</button>
+              </div>
+            </div>
+          </div>
+          <!-- if for ka counter is divisible by 3 and counter is >o and .last should be included. -->
+          
+
+          
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="http://127.0.0.1:8000/#demo3" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="http://127.0.0.1:8000/#demo3" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  
+</div>
+
+    <script src="./;_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./;_files/popper.min.js.download" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="./;_files/bootstrap.min.js.download" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+<script>
+  if (localStorage.getItem('cart') == null) {
+    var cart = {};
+  }
+  else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+  };
+  // jquery starts here
+  $('.cart').click(function () {
+
+    console.log('clicked');
+    var idstr = this.id.toString();
+    console.log(idstr);
+    if (cart[idstr] != undefined) {
+      cart[idstr] = cart[idstr] + 1;
+    }
+    else {
+      cart[idstr] = 1;
+    }
+    console.log(cart);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+  });
+  // for popover of cart adding scrpt which is copied from bootstrpa
+  $('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content','<h5>Cart for your items in my shopping cart</h5>');
+
+</script>
+
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./;_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

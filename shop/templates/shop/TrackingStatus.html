@@ -1,0 +1,99 @@
+{% extends 'shop/base.html' %}
+
+{% block title%} Tracking Status {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2> Enter your order id and Email address to track your orders </h2>
+        <form class="row g-3" method="post" action="#" id="trackerform">
+            {% csrf_token %}
+            <div class="my-4">
+                <label for="inputname" class="form-label">order Id</label>
+                <input type="text" class="form-control" name="orderid" id="orderid"
+                    placeholder="Add your order Id here.">
+            </div>
+            <div class="my-2">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <button type="submit" class="btn btn-primary">Track Your Order</button>
+    </div>
+    <div class="col my-4">
+        <h2>Your Order Status</h2>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+                Enter your order Id and Email and click Track Order to find details about your order!
+            </ul>
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2>Your Order details</h2>
+        <div class="my-4">
+            <ul class="list-group" id="citems">
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{%block js %}
+<script>
+    // things to do 
+    // have to show updates and when order is gonna come.
+    $('#trackerform').submit(function (event) {
+        $('#items').empty();
+        var formdata = {
+            'orderid': $('input[name=orderid]').val(), // hum le aa rahe hai input whose name is orderid
+            'email': $('input[name=email]').val(), //hum le aa rahe hai input whose name is email.
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+        };
+        // starting ajax
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'shop:TrackingStatus'%}",
+            data: formdata,
+            encode: true
+        })
+            .done(function (data) {
+                // console.log(data)
+                data = JSON.parse(data);
+                // filling data from 0th index and for 1st index 
+                updates = data[0];
+                if (updates.length > 0 & updates != {}) {
+                    for (i = 0; i < updates.length; i++) {
+                        let text = updates[i]['text'];
+                        let time = updates[i]['time'];
+                        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            ${text}
+                            <span class="badge bg-primary rounded-pill">${time}</span>
+                            </li>` // `` in betn these can u pass  string
+
+                        $('#items').append(mystr);
+                    }
+                }
+                else {
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            Sorry
+                            </li>` // `` in betn these can u pass  string
+
+                    $('#items').append(mystr);
+                }
+                // fill the order details here
+                cart = JSON.parse(data[1]);
+                // above we were getting error becoz data[1] is string hence we need to parse
+                console.log(cart);
+                for (item in cart) {
+                    let name = cart[item][1];
+                    let qty = cart[item][0];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                     <span class="badge bg-primary rounded-pill">${qty}</span>
+                        </li>` // `` in betn these can u pass  string
+
+                    $('#citems').append(mystr);
+                }
+            });
+        event.preventDefault();
+    });
+</script>
+{% endblock %}

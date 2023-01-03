@@ -1,0 +1,105 @@
+{% extends 'shop/base.html' %}
+
+{% block title%} Checkout {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2> My Awesome Cart Express Checkout - Review Your Cart items </h2>
+        <div>
+            <ul class="list-group my-4" id='items'>
+            </ul>
+            <!-- to show total price -->
+            <span id="totalprice"></span>
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2>step2- Enter address and details: </h2>
+        <form class="row g-3" method="post" action="{%url 'shop:checkout' %}">
+            {% csrf_token %}
+            <!-- here we have used input tag, we were getting error or not getting json id in database becoz of not using of this tag -->
+            <input type="hidden" name="itemjson" id="itemjson">
+            <div class="col-md-6">
+                <label for="Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="name" id="name">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address Line 2</label>
+                <input type="text" class="form-control" id="address2" name="address2"
+                    placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-3">
+                <label for="Phone" class="form-label">Phone No</label>
+                <input type="number" class="form-control" id="Phone" name="phone">
+            </div>
+            <div class="col-md-3">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Enter State</label>
+                <input type="text" class="form-control" id="state" name="state">
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode">
+            </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Checkout</button>
+    </div>
+    </form>
+</div>
+{% endblock %}
+{%block js %}
+<script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    console.log(cart)
+    // var sum is given to show total item in cart. 
+    var sum = 0;
+    var totalprice =0;
+    // while python there is f string funct and in JS we have ${} func.
+    if ($.isEmptyObject(cart)) {
+        mystr = `<p> <b>Your art is empty...</b></p> `
+        $('#items').append(mystr);
+    }
+    else {
+        for (item in cart) {
+            let name = cart[item][1];
+            let qty = cart[item][0];
+            let itemprice = cart[item][2];
+            sum = sum + qty; // to show quantity of item in cart
+            totalprice = totalprice+qty*itemprice;
+            mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+            ${name}
+            <span class="badge bg-primary rounded-pill">${qty}</span>
+                </li>` // `` in betn these can u pass  string
+
+            $('#items').append(mystr);
+        }
+
+    }
+    document.getElementById('cart').innerHTML = sum;
+    document.getElementById('totalprice').innerHTML = totalprice;
+    // from here we are taking these items to our database.
+    $('#itemjson').val(JSON.stringify(cart));
+    {% if thank %}
+    alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+    localStorage.clear();
+    document.location = "/";
+    {% endif %}
+</script>
+{% endblock %}

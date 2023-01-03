@@ -1,0 +1,30 @@
+{% extends 'shop/base.html' %}
+
+{% block title%} Contact {% endblock %}
+
+{% block body %}
+<form action="{% url 'shop:contact'%}" method="post">{% csrf_token %}
+    <div class="container">
+        <div class="mb-3 my-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Enter Your Name" name="name" id ="name">
+        </div>
+        <div class="mb-3 my-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp"  name="email" id="email">
+            <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3 my-3">
+            <label for="phoneno" class="form-label"> Phone No.</label>
+            <input type="phone" class="form-control"  placeholder="Enter Your Phone No." name="phone" id="phone">
+        </div>
+        <div class="mb-3 my-3">
+            <label for="desc" class="form-label"> describe your issue</label>
+            <input type="text" class="form-control" placeholder="Post your issue..." name="desc" id="desc"
+            >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
